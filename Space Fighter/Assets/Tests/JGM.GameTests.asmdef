@@ -3,7 +3,9 @@
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "UnityEditor.TestRunner",
+        "JGM.Game",
+        "JGM.GameEditor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
