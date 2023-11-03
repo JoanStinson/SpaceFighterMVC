@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ships Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ddee45de15c409d47aae49d7acaf27d0, type: 3}
+    - {fileID: 102900000, guid: 6e63ad1a8213a3248839e830269fd710, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1fb9a2606a2301e4797df8f073fd1a06, type: 3}
+  - {fileID: 21300000, guid: 47531a60ce9b11b40b9755d7990916ef, type: 3}
+  - {fileID: 21300000, guid: 42fe19212a8631244831c218d6333f52, type: 3}
+  - {fileID: 21300000, guid: bcb59b712be370d40aa1e0580f3f34de, type: 3}
+  - {fileID: 21300000, guid: 1215937263fa1af469d757147d28764b, type: 3}
+  - {fileID: 21300000, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: 21300000, guid: 5038c7a468fdb7b40b2d64532d3b3140, type: 3}
+  - {fileID: 21300000, guid: c7d31765654bf164d948e6b646c191bf, type: 3}
+  - {fileID: 21300000, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
+  - {fileID: 21300000, guid: fada57473e17a5a4fae341a2ff0d839d, type: 3}
+  - {fileID: 21300000, guid: 900be677bfc664a43941fcd99d787b4b, type: 3}
+  - {fileID: 21300000, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 21300000, guid: 100570ab91b8339438be838058a695d6, type: 3}
+  - {fileID: 21300000, guid: b3986fbd3a4b8de44b532742350f543f, type: 3}
+  - {fileID: 21300000, guid: 3f44bd3e208c31449a9fa662239d2883, type: 3}
+  - {fileID: 21300000, guid: 2928510f42004b84785631bc5a842d40, type: 3}
+  - {fileID: 21300000, guid: c6ea2a8f4105ba943a02feb7c3425fab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Fx_02
+  - Tracked_Vehicle
+  - Spaceships_LightMask
+  - Explosion-duplicate frames
+  - Thruster_02
+  - Explosion
+  - Guns
+  - Thruster_01
+  - Thruster_04
+  - Missiles
+  - Turrets
+  - Spaceships
+  - Fx_03
+  - Fx_01
+  - Fx_04
+  - Fx_05
+  - Thruster_03
+  m_RenderDataMap: {}
+  m_Tag: Ships Sprite Atlas
+  m_IsVariant: 0

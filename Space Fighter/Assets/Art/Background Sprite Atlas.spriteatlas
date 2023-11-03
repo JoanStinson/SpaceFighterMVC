@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Background Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2fc433cdcd706d2428a81efc01e43862, type: 3}
+    - {fileID: 102900000, guid: cf05ded32205fb542a7c9dbea5a53709, type: 3}
+    - {fileID: 102900000, guid: b1d64d59067971049aa5d6560b41348a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 20629660e6769a94eb325636a9c5da28, type: 3}
+  - {fileID: 21300000, guid: 1b771166eb0e1384e8470a803004bb42, type: 3}
+  - {fileID: 21300000, guid: cb888bf6dc8cf7d43b661981cdaa4793, type: 3}
+  - {fileID: 21300000, guid: da6c11a7c0876c0469f9f779f4b4af30, type: 3}
+  - {fileID: 21300000, guid: dc506b29641b8a7419c8dd5607d125f6, type: 3}
+  - {fileID: 21300000, guid: c5dd4e8c69a79c7488777d0ebe03b00d, type: 3}
+  - {fileID: 21300000, guid: fb23e7fcb06190047b9246efcf887f79, type: 3}
+  - {fileID: 21300000, guid: a28a4feed2b244f43b3940150a93def8, type: 3}
+  - {fileID: 21300000, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Asteroids
+  - TileSheet-v1
+  - Surface_Layer3
+  - Surface_Layer2
+  - Star_Tiles
+  - debris
+  - Surface_Layer4
+  - Surface_Layer1
+  - Asteroids_Foreground
+  m_RenderDataMap: {}
+  m_Tag: Moon Sprite Atlas
+  m_IsVariant: 0
