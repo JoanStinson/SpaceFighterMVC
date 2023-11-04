@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
 namespace JGM.Game
@@ -45,8 +47,9 @@ namespace JGM.Game
             m_playView.Show();
         }
 
-        public void OnPlayerKilled()
+        public async void OnPlayerKilled()
         {
+            await Task.Delay(TimeSpan.FromSeconds(1));
             m_playView.Hide();
             m_gameOverView.Show();
         }
