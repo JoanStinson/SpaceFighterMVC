@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214869434556122690}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.591, y: 0.217, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.5910001, y: 0.217, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 275095155418211660}
@@ -265,8 +265,9 @@ MonoBehaviour:
   m_bulletLauncher: {fileID: 2871911891365505177}
   m_shipAnimator: {fileID: 1158672059443009709}
   m_thrusters:
-  - {fileID: 7880599090469078049}
-  - {fileID: 4511645293479035620}
+  - {fileID: 1131250598144465910}
+  - {fileID: 7329022261360402970}
+  m_boxCollider2D: {fileID: 6876155948209952483}
 --- !u!114 &2301114494026867872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,8 +381,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387180699592224946}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.591, y: -0.216, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.5910001, y: -0.216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 275095155418211660}

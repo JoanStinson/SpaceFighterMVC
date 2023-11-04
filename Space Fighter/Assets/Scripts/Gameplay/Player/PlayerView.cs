@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using Zenject;
 
 namespace JGM.Game
 {
@@ -15,8 +17,11 @@ namespace JGM.Game
         [SerializeField] private PlayerWeapon m_playerWeapon;
         [SerializeField] private BulletLauncher m_bulletLauncher;
         [SerializeField] private Animator m_shipAnimator;
-        [SerializeField] private Transform[] m_thrusters;
+        [SerializeField] private Animator[] m_thrusters;
+        [SerializeField] private BoxCollider2D m_boxCollider2D;
 
+        [Inject]
+        private ICoroutineService m_coroutineService;
         private GameView m_gameView;
         private GameModel m_gameModel;
         private Vector3 m_velocity = Vector3.zero;
@@ -46,6 +51,7 @@ namespace JGM.Game
             m_gameModel.currentHealth -= damageAmount;
             if (m_gameModel.currentHealth <= 0)
             {
+                m_playerInput.enabled = false;
                 m_shipAnimator.Play("ShipExplosion");
                 foreach (var thruster in m_thrusters)
                 {
@@ -53,6 +59,29 @@ namespace JGM.Game
                 }
                 m_gameView.OnPlayerKilled();
             }
+            else
+            {
+                m_coroutineService.StartExternalCoroutine(FlashPlayer());
+            }
+        }
+
+        private IEnumerator FlashPlayer()
+        {
+            m_shipAnimator.Play("ShipFlash");
+            foreach (var thruster in m_thrusters)
+            {
+                thruster.Play("Flash");
+            }
+            m_boxCollider2D.enabled = false;
+
+            yield return new WaitForSeconds(2);
+
+            m_shipAnimator.Play("ShipIdle");
+            foreach (var thruster in m_thrusters)
+            {
+                thruster.Play("Thruster");
+            }
+            m_boxCollider2D.enabled = true;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -67,10 +96,11 @@ namespace JGM.Game
         {
             gameObject.SetActive(true);
             m_shipAnimator.Play("ShipIdle");
-            foreach (Transform thruster in m_thrusters)
+            foreach (var thruster in m_thrusters)
             {
                 thruster.gameObject.SetActive(true);
             }
+            m_playerInput.enabled = true;
         }
 
         public void Hide()
