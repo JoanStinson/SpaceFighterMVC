@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_asteroidsPoolSize: 5
   m_asteroidsPoolParent: {fileID: 1184974476}
   m_asteroidPrefab: {fileID: 5016989561208278870, guid: 60738ae74de6a9a4f8db1230310c6e3a, type: 3}
-  m_asteroidsAmount: 3
+  m_asteroidsAmount: 1
 --- !u!1 &1121068040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,7 +2584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275095155418211660, guid: 48ec810b9b553574d8aa8ffda1569d28, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.69
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 275095155418211660, guid: 48ec810b9b553574d8aa8ffda1569d28, type: 3}
       propertyPath: m_LocalPosition.y
