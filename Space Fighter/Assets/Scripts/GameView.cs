@@ -16,15 +16,16 @@ namespace JGM.Game
         public void Initialize(GameController gameController)
         {
             m_gameController = gameController;
+            var gameModel = m_gameController.GetGameModel();
 
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
             m_mainMenuView.Hide();
 
-            m_playView.Initialize();
-            m_playView.Hide();
+            m_playView.Initialize(this, gameModel);
+            m_playView.Show();
 
-            m_gameOverView.Initialize(this, m_gameController.GetGameModel());
-            m_gameOverView.Show();
+            m_gameOverView.Initialize(this, gameModel);
+            m_gameOverView.Hide();
         }
 
         public void OnClickPlayButton()
