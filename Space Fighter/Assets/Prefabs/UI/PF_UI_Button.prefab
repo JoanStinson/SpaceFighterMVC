@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7116016404783613810}
   - component: {fileID: 2730450775735176021}
+  - component: {fileID: 9205333383365816356}
   - component: {fileID: 9156260584864353210}
   m_Layer: 5
   m_Name: ButtonText
@@ -45,6 +46,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719819537530333888}
   m_CullTransparentMesh: 1
+--- !u!114 &9205333383365816356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719819537530333888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3259c844a4e1142b6d2566aab4c51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_localizedKey: INSERT_KEY_HERE
 --- !u!114 &9156260584864353210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +81,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 599c87a7d216a0246b54b566311609e4, type: 2}
+  m_sharedMaterial: {fileID: -3539949276603134635, guid: 599c87a7d216a0246b54b566311609e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

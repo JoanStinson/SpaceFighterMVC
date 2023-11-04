@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=Raumkämpfer
+TID_PLAY=Spielen
+TID_QUIT=Beenden
+TID_SCORE=Punktzahl:
+TID_GAME_OVER=Spiel vorbei
+TID_RETRY=Erneut versuchen

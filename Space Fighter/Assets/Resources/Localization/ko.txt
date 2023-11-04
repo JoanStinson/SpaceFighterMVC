@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=우주 전투기
+TID_PLAY=플레이
+TID_QUIT=종료
+TID_SCORE=점수:
+TID_GAME_OVER=게임 오버
+TID_RETRY=재시도

@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=Космический Истребитель
+TID_PLAY=Играть
+TID_QUIT=Выйти
+TID_SCORE=Счет:
+TID_GAME_OVER=Конец Игры
+TID_RETRY=Повторить

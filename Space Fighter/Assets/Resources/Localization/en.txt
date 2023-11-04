@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=Space Fighter
+TID_PLAY=Play
+TID_QUIT=Quit
+TID_SCORE=Score:
+TID_GAME_OVER=Game Over
+TID_RETRY=Retry

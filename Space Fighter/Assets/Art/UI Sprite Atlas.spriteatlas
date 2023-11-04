@@ -40,18 +40,24 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f953d9f1fc4830b4fb791570c0adddb2, type: 3}
   - {fileID: 21300000, guid: 9a6700b2cce46d84284a730af7e269c8, type: 3}
   - {fileID: 21300000, guid: 3a4549b5ca249e044b322cc72d8d7139, type: 3}
-  - {fileID: 21300000, guid: b9a4ef370a9bd5c43bd633210c15b538, type: 3}
+  - {fileID: -2161618974450914691, guid: b9a4ef370a9bd5c43bd633210c15b538, type: 3}
+  - {fileID: -2414007942309818082, guid: b9a4ef370a9bd5c43bd633210c15b538, type: 3}
+  - {fileID: 21300000, guid: ca90cca7c576ecf4ca78906e1b67e0c6, type: 3}
   - {fileID: 21300000, guid: fb7846b8a0d120b4a8d9fbe234af7451, type: 3}
   - {fileID: 21300000, guid: c03912098630c314b8ceb7d68c5e50a3, type: 3}
+  - {fileID: 21300000, guid: 4e84332904b01ea42a98489e3f3db218, type: 3}
   - {fileID: 21300000, guid: 02577a7a2c5086244aa3504d7d3380de, type: 3}
   - {fileID: 21300000, guid: effcb4edefa01b1448f2a2c38b3d700f, type: 3}
   m_PackedSpriteNamesToIndex:
   - Fuel_Bar
   - Crew_Counter
   - Radar_Frame
-  - Hull_Bar
+  - Hull_Bar_1
+  - Hull_Bar_0
+  - White
   - Missiles_Icon
   - Crew_Icon
+  - language icon
   - Velocity_Gauges
   - Missile_Counter
   m_RenderDataMap: {}

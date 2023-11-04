@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace JGM.Game
 {
@@ -11,9 +10,19 @@ namespace JGM.Game
 
         public void Initialize()
         {
-            //m_mainMenuView.Initialize();
-            //m_playView.Initialize();
-            //m_gameOverView.Initialize();
+            m_mainMenuView.Initialize(this, new MainMenuController());
+            m_mainMenuView.Show();
+
+            m_playView.Initialize();
+            m_playView.Hide();
+
+            m_gameOverView.Initialize();
+            m_gameOverView.Hide();
+        }
+
+        public void OnClickPlayButton()
+        {
+            m_mainMenuView.Hide();
         }
     }
 }

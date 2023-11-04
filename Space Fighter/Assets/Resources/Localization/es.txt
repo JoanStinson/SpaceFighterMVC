@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=Luchador Espacial
+TID_PLAY=Jugar
+TID_QUIT=Salir
+TID_SCORE=Puntuación:
+TID_GAME_OVER=Fin del Juego
+TID_RETRY=Reintentar

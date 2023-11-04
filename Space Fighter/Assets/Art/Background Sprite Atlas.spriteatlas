@@ -59,5 +59,5 @@ SpriteAtlas:
   - Surface_Layer1
   - Asteroids_Foreground
   m_RenderDataMap: {}
-  m_Tag: Moon Sprite Atlas
+  m_Tag: Background Sprite Atlas
   m_IsVariant: 0

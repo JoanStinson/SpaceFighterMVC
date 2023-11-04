@@ -49,7 +49,21 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
   - {fileID: 21300000, guid: fada57473e17a5a4fae341a2ff0d839d, type: 3}
   - {fileID: 21300000, guid: 900be677bfc664a43941fcd99d787b4b, type: 3}
-  - {fileID: 21300000, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -15192181568165392, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 2679066100590310079, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -5481986502742383148, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -2565173856860997937, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 6537989418358455831, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 1132206095249792208, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 3824464749113777492, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 5210353008261302369, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -1513770721519998794, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 4958473694988434409, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 4958709792872695805, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: 1089661974445368432, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -4103875860814834896, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -19636353391941667, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
+  - {fileID: -7396095203662698337, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
   - {fileID: 21300000, guid: 100570ab91b8339438be838058a695d6, type: 3}
   - {fileID: 21300000, guid: b3986fbd3a4b8de44b532742350f543f, type: 3}
   - {fileID: 21300000, guid: 3f44bd3e208c31449a9fa662239d2883, type: 3}
@@ -67,7 +81,21 @@ SpriteAtlas:
   - Thruster_04
   - Missiles
   - Turrets
-  - Spaceships
+  - Spaceships_10
+  - Spaceships_11
+  - Spaceships_12
+  - Spaceships_13
+  - Spaceships_14
+  - Spaceships_1
+  - Spaceships_0
+  - Spaceships_3
+  - Spaceships_2
+  - Spaceships_5
+  - Spaceships_4
+  - Spaceships_7
+  - Spaceships_6
+  - Spaceships_9
+  - Spaceships_8
   - Fx_03
   - Fx_01
   - Fx_04

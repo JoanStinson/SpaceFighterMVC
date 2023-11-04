@@ -1,0 +1,6 @@
+﻿TID_GAME_TITLE=Caccia Spaziale
+TID_PLAY=Gioca
+TID_QUIT=Esci
+TID_SCORE=Punteggio:
+TID_GAME_OVER=Fine del Gioco
+TID_RETRY=Riprova
