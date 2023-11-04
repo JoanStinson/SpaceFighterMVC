@@ -27,6 +27,7 @@ namespace JGM.Game
         public void OnClickPlayButton()
         {
             m_mainMenuView.Hide();
+            m_playView.Show();
         }
     }
 }
