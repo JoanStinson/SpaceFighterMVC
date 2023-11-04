@@ -46,7 +46,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
   - {fileID: 21300000, guid: 5038c7a468fdb7b40b2d64532d3b3140, type: 3}
   - {fileID: 21300000, guid: c7d31765654bf164d948e6b646c191bf, type: 3}
-  - {fileID: 21300000, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
+  - {fileID: 7004662692740248911, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
+  - {fileID: 8660343068341943778, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
   - {fileID: 21300000, guid: fada57473e17a5a4fae341a2ff0d839d, type: 3}
   - {fileID: 21300000, guid: 900be677bfc664a43941fcd99d787b4b, type: 3}
   - {fileID: -15192181568165392, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
@@ -79,7 +80,8 @@ SpriteAtlas:
   - Explosion
   - Guns
   - Thruster_01
-  - Thruster_04
+  - Thruster_04_0
+  - Thruster_04_1
   - Missiles
   - Turrets
   - Spaceships_10
