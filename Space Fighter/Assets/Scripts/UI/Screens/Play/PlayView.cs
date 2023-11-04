@@ -53,6 +53,7 @@ namespace JGM.Game
         {
             base.Hide();
             m_player.gameObject.SetActive(false);
+            m_enemiesSpawner.Return();
         }
 
         private void SetHealthBar(GameModel gameModel)

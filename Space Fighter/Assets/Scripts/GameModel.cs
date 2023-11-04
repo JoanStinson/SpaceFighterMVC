@@ -40,5 +40,11 @@ namespace JGM.Game
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public void Reset()
+        {
+            score = 0;
+            currentHealth = maxHealth;
+        }
     }
 }

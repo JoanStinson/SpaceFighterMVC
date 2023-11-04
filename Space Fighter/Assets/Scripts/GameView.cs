@@ -14,19 +14,20 @@ namespace JGM.Game
         [Inject]
         private ILocalizationService m_localizationService;
         private GameController m_gameController;
+        private GameModel m_gameModel;
 
         public void Initialize(GameController gameController)
         {
             m_gameController = gameController;
-            var gameModel = m_gameController.GetGameModel();
+            m_gameModel = m_gameController.GetGameModel();
 
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
             m_mainMenuView.Hide();
 
-            m_playView.Initialize(this, gameModel, m_localizationService);
+            m_playView.Initialize(this, m_gameModel, m_localizationService);
             m_playView.Show();
 
-            m_gameOverView.Initialize(this, gameModel);
+            m_gameOverView.Initialize(this, m_gameModel);
             m_gameOverView.Hide();
         }
 
@@ -43,6 +44,7 @@ namespace JGM.Game
 
         public void OnClickRetryButton()
         {
+            m_gameModel.Reset();
             m_gameOverView.Hide();
             m_playView.Show();
         }
