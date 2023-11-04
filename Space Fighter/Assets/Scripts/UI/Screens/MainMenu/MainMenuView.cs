@@ -29,7 +29,7 @@ namespace JGM.Game
 
         private void OnClickQuitButton()
         {
-            m_controller.QuitGame();
+            m_gameView.OnClickQuitButton();
         }
 
         private void OnClickLanguageButton()

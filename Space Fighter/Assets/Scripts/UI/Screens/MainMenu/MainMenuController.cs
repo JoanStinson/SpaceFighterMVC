@@ -12,15 +12,6 @@ namespace JGM.Game
             m_localizationService = localizationService;
         }
 
-        public void QuitGame()
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
-        }
-
         public void ChangeLanguageRandomly()
         {
             Language currentLanguage = m_localizationService.currentLanguage;

@@ -41,5 +41,10 @@ namespace JGM.Game
         {
             m_text.text = m_localizationService.Localize(m_localizedKey);
         }
+
+        public void LocaliseText(string localizedKey, string extraText = "")
+        {
+            m_text.text = $"{m_localizationService.Localize(localizedKey)}{extraText}";
+        }
     }
 }

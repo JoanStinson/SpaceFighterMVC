@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace JGM.Game
 {
@@ -10,7 +9,7 @@ namespace JGM.Game
 
         private void Start()
         {
-            m_gameView.Initialize();
+            m_gameView.Initialize(new GameController());
         }
     }
 }

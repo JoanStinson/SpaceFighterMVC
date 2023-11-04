@@ -11,22 +11,36 @@ namespace JGM.Game
 
         [Inject]
         private ILocalizationService m_localizationService;
+        private GameController m_gameController;
 
-        public void Initialize()
+        public void Initialize(GameController gameController)
         {
+            m_gameController = gameController;
+
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
-            m_mainMenuView.Show();
+            m_mainMenuView.Hide();
 
             m_playView.Initialize();
             m_playView.Hide();
 
-            m_gameOverView.Initialize();
-            m_gameOverView.Hide();
+            m_gameOverView.Initialize(this, m_gameController.GetGameModel());
+            m_gameOverView.Show();
         }
 
         public void OnClickPlayButton()
         {
             m_mainMenuView.Hide();
+            m_playView.Show();
+        }
+
+        public void OnClickQuitButton()
+        {
+            m_gameController.QuitGame();
+        }
+
+        public void OnClickRetryButton()
+        {
+            m_gameOverView.Hide();
             m_playView.Show();
         }
     }
