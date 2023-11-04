@@ -5,8 +5,12 @@ namespace JGM.Game
 {
     public class PlayView : ScreenView
     {
+        [Header("UI")]
         [SerializeField] private FillBarView m_healthBar;
         [SerializeField] private LocalizedText m_scoreText;
+
+        [Header("Gameplay")]
+        [SerializeField] private PlayerView m_player;
 
         private GameView m_gameView;
         private GameModel m_gameModel;
@@ -37,6 +41,13 @@ namespace JGM.Game
             base.Show();
             SetScoreText(m_gameModel.score);
             SetHealthBar(m_gameModel);
+            m_player.gameObject.SetActive(true);
+        }
+
+        public override void Hide()
+        {
+            base.Hide();
+            m_player.gameObject.SetActive(false);
         }
 
         private void SetHealthBar(GameModel gameModel)
