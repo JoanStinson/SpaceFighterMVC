@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using TMPro;
+using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace JGM.Game
@@ -21,6 +22,7 @@ namespace JGM.Game
         private Color m_originalColor;
         private int m_startingValue;
         private int m_targetValue;
+        private string m_prefixText = "";
         private int m_currentValue;
         private float m_textTimer;
 
@@ -29,16 +31,17 @@ namespace JGM.Game
             m_originalColor = m_text.color;
         }
 
-        public void SetValue(int value)
+        public void SetValue(int value, string prefixText = "")
         {
-            m_text.text = value.ToString();
+            m_text.text = $"{prefixText}{value.ToString("0000")}";
         }
 
-        public void SetValueAnimated(int value, float delay = 0)
+        public void SetValueAnimated(int value, string prefixText = "", float delay = 0)
         {
             m_textTimer = 0;
             m_startingValue = m_currentValue;
             m_targetValue = value;
+            m_prefixText = prefixText;
 
             if (m_startingValue != m_targetValue)
             {
@@ -61,12 +64,12 @@ namespace JGM.Game
             while (m_currentValueIsDifferentFromTarget)
             {
                 m_currentValue = (int)Mathf.Lerp(m_startingValue, m_targetValue, m_textTimer / m_textAnimationDuration);
-                m_text.text = m_currentValue.ToString();
+                m_text.text = $"{m_prefixText}{m_currentValue.ToString("0000")}";
                 m_textTimer += Time.deltaTime;
                 yield return null;
             }
 
-            m_text.text = m_targetValue.ToString();
+            m_text.text = $"{m_prefixText}{m_targetValue.ToString("0000")}";
             m_text.color = m_originalColor;
         }
 
@@ -74,7 +77,7 @@ namespace JGM.Game
         {
             if (m_currentValueIsDifferentFromTarget)
             {
-                m_text.text = m_targetValue.ToString();
+                m_text.text = $"{m_prefixText}{m_targetValue.ToString("0000")}";
                 m_text.color = m_originalColor;
             }
         }

@@ -7,7 +7,7 @@ namespace JGM.Game
     {
         [Header("UI")]
         [SerializeField] private FillBarView m_healthBar;
-        [SerializeField] private LocalizedText m_scoreText;
+        [SerializeField] private TextMeshProAnimatedBinder m_scoreText;
 
         [Header("Gameplay")]
         [SerializeField] private PlayerView m_player;
@@ -15,13 +15,15 @@ namespace JGM.Game
 
         private GameView m_gameView;
         private GameModel m_gameModel;
+        private string m_scoreName;
 
-        public void Initialize(GameView gameView, GameModel gameModel)
+        public void Initialize(GameView gameView, GameModel gameModel, ILocalizationService localizationService)
         {
             m_gameView = gameView;
             m_gameModel = gameModel;
             m_gameModel.PropertyChanged += OnPropertyChanged;
             m_player.Initialize(m_gameView, m_gameModel);
+            m_scoreName = $"{localizationService.Localize("TID_SCORE")} ";
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -30,7 +32,7 @@ namespace JGM.Game
 
             if (e.PropertyName == "score")
             {
-                SetScoreText(gameModel.score);
+                m_scoreText.SetValueAnimated(gameModel.score, m_scoreName);
             }
             else if (e.PropertyName == "currentHealth")
             {
@@ -41,7 +43,7 @@ namespace JGM.Game
         public override void Show()
         {
             base.Show();
-            SetScoreText(m_gameModel.score);
+            m_scoreText.SetValue(m_gameModel.score, m_scoreName);
             SetHealthBar(m_gameModel);
             m_player.gameObject.SetActive(true);
             m_enemiesSpawner.Spawn();
@@ -56,11 +58,6 @@ namespace JGM.Game
         private void SetHealthBar(GameModel gameModel)
         {
             m_healthBar.SetValue(gameModel.currentHealth, gameModel.maxHealth);
-        }
-
-        private void SetScoreText(int score)
-        {
-            m_scoreText.LocaliseText("TID_SCORE", $" {score}");
         }
     }
 }
