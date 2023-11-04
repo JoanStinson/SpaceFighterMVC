@@ -11,6 +11,7 @@ namespace JGM.Game
 
         [Header("Gameplay")]
         [SerializeField] private PlayerView m_player;
+        [SerializeField] private EnemiesSpawner m_enemiesSpawner;
 
         private GameView m_gameView;
         private GameModel m_gameModel;
@@ -20,7 +21,7 @@ namespace JGM.Game
             m_gameView = gameView;
             m_gameModel = gameModel;
             m_gameModel.PropertyChanged += OnPropertyChanged;
-            m_player.Initialize(m_gameModel);
+            m_player.Initialize(m_gameView, m_gameModel);
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -43,6 +44,7 @@ namespace JGM.Game
             SetScoreText(m_gameModel.score);
             SetHealthBar(m_gameModel);
             m_player.gameObject.SetActive(true);
+            m_enemiesSpawner.Spawn();
         }
 
         public override void Hide()

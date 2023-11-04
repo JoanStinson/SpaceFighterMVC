@@ -20,7 +20,7 @@ namespace JGM.Game
             }
         }
 
-        private float m_currentHealth;
+        private float m_currentHealth = 3;
         public float currentHealth
         {
             get => m_currentHealth;
@@ -34,7 +34,7 @@ namespace JGM.Game
             }
         }
 
-        public float maxHealth { get; set; }
+        public float maxHealth { get; set; } = 3;
 
         protected void OnPropertyChanged(string propertyName)
         {

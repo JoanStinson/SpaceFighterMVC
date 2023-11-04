@@ -44,5 +44,11 @@ namespace JGM.Game
             m_gameOverView.Hide();
             m_playView.Show();
         }
+
+        public void OnPlayerKilled()
+        {
+            m_playView.Hide();
+            m_gameOverView.Show();
+        }
     }
 }

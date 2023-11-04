@@ -47,7 +47,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c5dd4e8c69a79c7488777d0ebe03b00d, type: 3}
   - {fileID: 21300000, guid: fb23e7fcb06190047b9246efcf887f79, type: 3}
   - {fileID: 21300000, guid: a28a4feed2b244f43b3940150a93def8, type: 3}
-  - {fileID: 21300000, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
+  - {fileID: -5034741795944151528, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
+  - {fileID: -2484399583691144286, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
+  - {fileID: 7723543999257568306, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
+  - {fileID: 5482614257475622984, guid: 840ddbbf6f0df3b49b6d40dc87e7be22, type: 3}
   m_PackedSpriteNamesToIndex:
   - Asteroids
   - TileSheet-v1
@@ -57,7 +60,10 @@ SpriteAtlas:
   - debris
   - Surface_Layer4
   - Surface_Layer1
-  - Asteroids_Foreground
+  - Asteroids_Foreground_0
+  - Asteroids_Foreground_1
+  - Asteroids_Foreground_2
+  - Asteroids_Foreground_3
   m_RenderDataMap: {}
   m_Tag: Background Sprite Atlas
   m_IsVariant: 0
