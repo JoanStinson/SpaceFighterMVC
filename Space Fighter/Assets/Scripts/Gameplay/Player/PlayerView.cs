@@ -14,6 +14,8 @@ namespace JGM.Game
         [SerializeField] private PlayerInput m_playerInput;
         [SerializeField] private PlayerWeapon m_playerWeapon;
         [SerializeField] private BulletLauncher m_bulletLauncher;
+        [SerializeField] private Animator m_shipAnimator;
+        [SerializeField] private Transform[] m_thrusters;
 
         private GameView m_gameView;
         private GameModel m_gameModel;
@@ -44,6 +46,11 @@ namespace JGM.Game
             m_gameModel.currentHealth -= damageAmount;
             if (m_gameModel.currentHealth <= 0)
             {
+                m_shipAnimator.Play("ShipExplosion");
+                foreach (var thruster in m_thrusters)
+                {
+                    thruster.gameObject.SetActive(false);
+                }
                 m_gameView.OnPlayerKilled();
             }
         }
@@ -54,6 +61,21 @@ namespace JGM.Game
             {
                 damageable.TakeDamage(m_damagePower);
             }
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+            m_shipAnimator.Play("ShipIdle");
+            foreach (Transform thruster in m_thrusters)
+            {
+                thruster.gameObject.SetActive(true);
+            }
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

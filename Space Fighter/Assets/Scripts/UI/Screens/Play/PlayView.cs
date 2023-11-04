@@ -45,14 +45,14 @@ namespace JGM.Game
             base.Show();
             m_scoreText.SetValue(m_gameModel.score, m_scoreName);
             SetHealthBar(m_gameModel);
-            m_player.gameObject.SetActive(true);
+            m_player.Show();
             m_enemiesSpawner.Spawn();
         }
 
         public override void Hide()
         {
             base.Hide();
-            m_player.gameObject.SetActive(false);
+            m_player.Hide();
             m_enemiesSpawner.Return();
         }
 

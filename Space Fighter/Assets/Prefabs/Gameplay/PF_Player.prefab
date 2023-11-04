@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4934439507317343437}
   - component: {fileID: 1131250598144465910}
   m_Layer: 0
-  m_Name: ThrusterSprite
+  m_Name: LeftThrusterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275095155196076398}
   - component: {fileID: 275095155196076397}
+  - component: {fileID: 1158672059443009709}
   m_Layer: 0
   m_Name: ShipSprite
   m_TagString: Untagged
@@ -178,12 +179,31 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.90625, y: 1.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1158672059443009709
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275095155196076399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c238a0c88ec6274687f45e1718d27e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &275095155418211661
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +263,10 @@ MonoBehaviour:
   m_playerInput: {fileID: 2301114494026867872}
   m_playerWeapon: {fileID: 7222632679979207500}
   m_bulletLauncher: {fileID: 2871911891365505177}
+  m_shipAnimator: {fileID: 1158672059443009709}
+  m_thrusters:
+  - {fileID: 7880599090469078049}
+  - {fileID: 4511645293479035620}
 --- !u!114 &2301114494026867872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +367,7 @@ GameObject:
   - component: {fileID: 7426798835887286017}
   - component: {fileID: 7329022261360402970}
   m_Layer: 0
-  m_Name: ThrusterSprite (1)
+  m_Name: RightThrusterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -43,7 +43,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 42fe19212a8631244831c218d6333f52, type: 3}
   - {fileID: 21300000, guid: bcb59b712be370d40aa1e0580f3f34de, type: 3}
   - {fileID: 21300000, guid: 1215937263fa1af469d757147d28764b, type: 3}
-  - {fileID: 21300000, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: -7061159883300251746, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: -222035745519106718, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: -5197271548307897853, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: -49130668184793455, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: 4348620978117878488, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: -5600206312213581617, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: 5986030973748356752, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
+  - {fileID: 3815954189206336483, guid: da03ae136cb51ff47981056cd18e8716, type: 3}
   - {fileID: 21300000, guid: 5038c7a468fdb7b40b2d64532d3b3140, type: 3}
   - {fileID: 21300000, guid: c7d31765654bf164d948e6b646c191bf, type: 3}
   - {fileID: 7004662692740248911, guid: 060138852d5c3ef499f8e3f91700272f, type: 3}
@@ -77,7 +84,14 @@ SpriteAtlas:
   - Spaceships_LightMask
   - Explosion-duplicate frames
   - Thruster_02
-  - Explosion
+  - Explosion_10
+  - Explosion_12
+  - Explosion_13
+  - Explosion_4
+  - Explosion_7
+  - Explosion_1
+  - Explosion_0
+  - Explosion_2
   - Guns
   - Thruster_01
   - Thruster_04_0
