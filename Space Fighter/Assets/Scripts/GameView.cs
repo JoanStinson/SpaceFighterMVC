@@ -11,9 +11,9 @@ namespace JGM.Game
 
         public void Initialize()
         {
-            m_mainMenuView.Initialize();
-            m_playView.Initialize();
-            m_gameOverView.Initialize();
+            //m_mainMenuView.Initialize();
+            //m_playView.Initialize();
+            //m_gameOverView.Initialize();
         }
     }
 }
