@@ -22,6 +22,18 @@ namespace JGM.Game
             }
         }
 
+        public ComponentPool(int poolSize, Transform poolParent, T prefab)
+        {
+            for (int i = 0; i < poolSize; i++)
+            {
+                var pooledGO = GameObject.Instantiate(prefab);
+                pooledGO.gameObject.SetName($"Pooled {typeof(T)} {i + 1}");
+                pooledGO.transform.SetParent(poolParent);
+                pooledGO.gameObject.SetActive(false);
+                m_poolStack.Push(pooledGO);
+            }
+        }
+
         public virtual T Get()
         {
             if (m_poolStack.Count == 0)

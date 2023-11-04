@@ -6,7 +6,7 @@ namespace JGM.Game
     public class PlayerInput : MonoBehaviour
     {
         public IInputService input { get; private set; }
-        public event Action onFireWeapon;
+        public event Action onFireWeapon = delegate { };
 
         private void Awake()
         {
