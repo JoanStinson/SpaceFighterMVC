@@ -20,6 +20,11 @@ namespace JGM.Game
         {
             await Task.Delay(TimeSpan.FromSeconds(m_delayToSpawnInSeconds));
 
+            if (m_asteroidToSubscribe == null)
+            {
+                return;
+            }
+
             for (int i = 0; i < m_amountOfPieces; i++)
             {
                 var spawnedAsteroidPiece = Instantiate(m_asteroidPiecePrefab);

@@ -2004,8 +2004,8 @@ MonoBehaviour:
   m_delayBetweenSpawnsInSeconds: 5
   m_bottomLimitSpawn: -3.85
   m_topLimitSpawn: 3.85
-  m_leftLimitSpawn: 9
-  m_rightLimitSpawn: 9
+  m_leftLimitSpawn: 8
+  m_rightLimitSpawn: 14
 --- !u!1 &1109092394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,6 +4326,7 @@ GameObject:
   - component: {fileID: 2121785561}
   - component: {fileID: 2121785560}
   - component: {fileID: 2121785559}
+  - component: {fileID: 2121785562}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -4687,6 +4688,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8144500f0653aa4f92856f350a9dfbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2121785562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121785554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3259c844a4e1142b6d2566aab4c51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_localizedKey: INSERT_KEY_HERE
 --- !u!1001 &275095156349057227
 PrefabInstance:
   m_ObjectHideFlags: 0

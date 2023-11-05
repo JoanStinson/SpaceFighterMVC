@@ -71,7 +71,7 @@ MonoBehaviour:
   m_asteroidToSubscribe: {fileID: 5016989561208278870}
   m_asteroidPiecePrefab: {fileID: 4368206123721436189, guid: ed49302d6c6445342a3f39424ecb48d0, type: 3}
   m_amountOfPieces: 2
-  m_delayToSpawnInSeconds: 0.5
+  m_delayToSpawnInSeconds: 0.2
 --- !u!61 &7746922081570542214
 BoxCollider2D:
   m_ObjectHideFlags: 0

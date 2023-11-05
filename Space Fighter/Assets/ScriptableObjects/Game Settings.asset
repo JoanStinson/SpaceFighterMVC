@@ -16,10 +16,10 @@ MonoBehaviour:
   m_maxHealth: 5
   m_enemies:
   - enemyPrefab: {fileID: 5016989561208278870, guid: 60738ae74de6a9a4f8db1230310c6e3a, type: 3}
-    poolSize: 3
-    spawnAmount: 2
+    poolSize: 4
+    spawnAmount: 4
     delayBetweenSpawnsInSeconds: 3
   - enemyPrefab: {fileID: 4686326833398280568, guid: b425f7c3185e3294896b5568badeb986, type: 3}
     poolSize: 8
-    spawnAmount: 3
+    spawnAmount: 8
     delayBetweenSpawnsInSeconds: 5
