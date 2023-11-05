@@ -5,7 +5,7 @@ namespace JGM.Game
     public class PlayerWeapon : MonoBehaviour
     {
         public Transform weaponMountPoint => m_weaponMountPoint;
-        
+
         [SerializeField] private float m_fireWeaponRefreshRate = 0.25f;
         [SerializeField] private Transform m_weaponMountPoint;
 

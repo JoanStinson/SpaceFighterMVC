@@ -7,8 +7,8 @@ namespace JGM.Game
         public event PropertyChangedEventHandler PropertyChanged;
 
         private int m_score;
-        public int score 
-        { 
+        public int score
+        {
             get => m_score;
             set
             {

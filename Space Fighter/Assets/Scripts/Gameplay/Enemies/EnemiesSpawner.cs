@@ -8,7 +8,7 @@ namespace JGM.Game
 {
     public class EnemiesSpawner : MonoBehaviour
     {
-        [SerializeField, Range(0f, 30f)] 
+        [SerializeField, Range(0f, 30f)]
         private float m_delayBetweenSpawnsInSeconds = 5f;
 
         [SerializeField] private float m_bottomLimitSpawn = -3.85f;
@@ -23,7 +23,12 @@ namespace JGM.Game
         public void Spawn(GameModel gameModel)
         {
             m_gameModel = gameModel;
+            CreateEnemyPools(gameModel);
+            m_spawn = true;
+        }
 
+        private void CreateEnemyPools(GameModel gameModel)
+        {
             foreach (var setting in gameModel.enemySettings)
             {
                 var poolParent = new GameObject("EnemyPool").transform;
@@ -31,8 +36,6 @@ namespace JGM.Game
                 var newEnemyPool = new ComponentPool<EnemyView>(setting.poolSize, poolParent, setting.enemyPrefab);
                 m_enemyPools.Add(newEnemyPool);
             }
-
-            m_spawn = true;
         }
 
         private async void Update()
@@ -43,7 +46,11 @@ namespace JGM.Game
             }
 
             await Task.Delay(TimeSpan.FromSeconds(m_delayBetweenSpawnsInSeconds));
+            SpawnEnemies();
+        }
 
+        private void SpawnEnemies()
+        {
             for (int i = 0; i < m_gameModel.enemySettings.Length; i++)
             {
                 var enemyPool = m_enemyPools[i];

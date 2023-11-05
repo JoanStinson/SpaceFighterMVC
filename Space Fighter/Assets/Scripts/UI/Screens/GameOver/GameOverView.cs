@@ -8,7 +8,7 @@ namespace JGM.Game
         [SerializeField] private LocalizedText m_scoreText;
         [SerializeField] private Button m_retryButton;
         [SerializeField] private Button m_quitButton;
-        
+
         private GameView m_gameView;
         private GameModel m_gameModel;
 
@@ -28,7 +28,7 @@ namespace JGM.Game
 
         private void OnClickQuitButton()
         {
-            m_gameView.OnClickQuitButton();                  
+            m_gameView.OnClickQuitButton();
         }
 
         public override void Show()

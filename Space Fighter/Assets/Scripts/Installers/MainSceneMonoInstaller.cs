@@ -24,7 +24,7 @@ namespace JGM.Game
 
         private void BindPrefabs()
         {
-            
+
         }
     }
 }

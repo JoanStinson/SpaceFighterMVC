@@ -9,7 +9,7 @@ namespace JGM.Game
 
         [SerializeField] private Transform m_bulletsPoolParent;
         [SerializeField] private BulletView m_bulletPrefab;
-        
+
         private GameModel m_gameModel;
         private ComponentPool<BulletView> m_bulletsPool;
 
