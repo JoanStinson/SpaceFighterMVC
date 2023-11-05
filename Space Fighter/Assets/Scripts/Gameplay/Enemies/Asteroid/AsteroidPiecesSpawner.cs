@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Threading.Tasks;
+using UnityEngine;
 
 namespace JGM.Game
 {
@@ -7,14 +9,17 @@ namespace JGM.Game
         [SerializeField] private AsteroidView m_asteroidToSubscribe;
         [SerializeField] private AsteroidView m_asteroidPiecePrefab;
         [SerializeField] private int m_amountOfPieces = 2;
+        [SerializeField] private float m_delayToSpawnInSeconds = 1;
 
         private void Awake()
         {
             m_asteroidToSubscribe.OnAsteroidBreak += SpawnAsteroidPieces;
         }
 
-        private void SpawnAsteroidPieces()
+        private async void SpawnAsteroidPieces()
         {
+            await Task.Delay(TimeSpan.FromSeconds(m_delayToSpawnInSeconds));
+
             for (int i = 0; i < m_amountOfPieces; i++)
             {
                 var spawnedAsteroidPiece = Instantiate(m_asteroidPiecePrefab);
