@@ -19,6 +19,7 @@ namespace JGM.Game
         [SerializeField] private Animator m_shipAnimator;
         [SerializeField] private Animator[] m_thrusters;
         [SerializeField] private BoxCollider2D m_boxCollider2D;
+        [SerializeField] private Animator m_weaponMountPoint;
 
         [Inject]
         private ICoroutineService m_coroutineService;
@@ -37,6 +38,7 @@ namespace JGM.Game
         private void FireWeapon()
         {
             m_playerWeapon.FireWeapon(m_bulletLauncher);
+            m_weaponMountPoint.Play("MountPoint");
         }
 
         private void Update()

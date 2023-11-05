@@ -38,7 +38,9 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 1fb9a2606a2301e4797df8f073fd1a06, type: 3}
+  - {fileID: 3431577258246214553, guid: 1fb9a2606a2301e4797df8f073fd1a06, type: 3}
+  - {fileID: 2200303402407572003, guid: 1fb9a2606a2301e4797df8f073fd1a06, type: 3}
+  - {fileID: 4577889184484335220, guid: 1fb9a2606a2301e4797df8f073fd1a06, type: 3}
   - {fileID: 21300000, guid: 47531a60ce9b11b40b9755d7990916ef, type: 3}
   - {fileID: 21300000, guid: 42fe19212a8631244831c218d6333f52, type: 3}
   - {fileID: 21300000, guid: bcb59b712be370d40aa1e0580f3f34de, type: 3}
@@ -72,14 +74,17 @@ SpriteAtlas:
   - {fileID: -4103875860814834896, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
   - {fileID: -19636353391941667, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
   - {fileID: -7396095203662698337, guid: ac034e487bb32964a8409e0f229d1d04, type: 3}
-  - {fileID: 21300000, guid: 100570ab91b8339438be838058a695d6, type: 3}
+  - {fileID: 3609535027732880483, guid: 100570ab91b8339438be838058a695d6, type: 3}
+  - {fileID: -7409534669231249031, guid: 100570ab91b8339438be838058a695d6, type: 3}
   - {fileID: 7776431714093509418, guid: b3986fbd3a4b8de44b532742350f543f, type: 3}
   - {fileID: 658241361870148683, guid: b3986fbd3a4b8de44b532742350f543f, type: 3}
   - {fileID: 21300000, guid: 3f44bd3e208c31449a9fa662239d2883, type: 3}
   - {fileID: 21300000, guid: 2928510f42004b84785631bc5a842d40, type: 3}
   - {fileID: 21300000, guid: c6ea2a8f4105ba943a02feb7c3425fab, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Fx_02
+  - Fx_02_2
+  - Fx_02_1
+  - Fx_02_0
   - Tracked_Vehicle
   - Spaceships_LightMask
   - Explosion-duplicate frames
@@ -113,7 +118,8 @@ SpriteAtlas:
   - Spaceships_6
   - Spaceships_9
   - Spaceships_8
-  - Fx_03
+  - Fx_03_0
+  - Fx_03_1
   - Fx_01_0
   - Fx_01_1
   - Fx_04
