@@ -23,10 +23,10 @@ namespace JGM.Game
             m_gameModel = m_gameController.GetGameModel(m_gameSettings);
 
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
-            m_mainMenuView.Hide();
+            m_mainMenuView.Show();
 
             m_playView.Initialize(this, m_gameModel, m_localizationService);
-            m_playView.Show();
+            m_playView.Hide();
 
             m_gameOverView.Initialize(this, m_gameModel);
             m_gameOverView.Hide();

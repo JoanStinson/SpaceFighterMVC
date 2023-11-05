@@ -10,6 +10,7 @@ namespace JGM.Game
         [SerializeField] private TextMeshProAnimatedBinder m_scoreText;
 
         [Header("Gameplay")]
+        [SerializeField] private Transform m_gameplayView;
         [SerializeField] private PlayerView m_player;
         [SerializeField] private EnemiesSpawner m_enemiesSpawner;
 
@@ -43,6 +44,7 @@ namespace JGM.Game
         public override void Show()
         {
             base.Show();
+            m_gameplayView.gameObject.SetActive(true);
             m_scoreText.SetValue(m_gameModel.score, m_scoreName);
             SetHealthBar(m_gameModel);
             m_player.Show();
@@ -52,6 +54,7 @@ namespace JGM.Game
         public override void Hide()
         {
             base.Hide();
+            m_gameplayView.gameObject.SetActive(false);
             m_player.Hide();
             m_enemiesSpawner.Return();
         }
