@@ -17,7 +17,7 @@ namespace JGM.Game
         [SerializeField] private float m_rightLimitSpawn = 22f;
 
         private GameModel m_gameModel;
-        private readonly List<ComponentPool<EnemyView>> m_enemyPools = new List<ComponentPool<EnemyView>>();
+        private List<ComponentPool<EnemyView>> m_enemyPools;
         private bool m_spawnActive;
 
         public void Spawn(GameModel gameModel)
@@ -29,6 +29,12 @@ namespace JGM.Game
 
         private void CreateEnemyPools(GameModel gameModel)
         {
+            if (m_enemyPools != null)
+            {
+                return;
+            }
+
+            m_enemyPools = new List<ComponentPool<EnemyView>>();
             foreach (var setting in gameModel.enemySettings)
             {
                 var poolParent = new GameObject("EnemyPool").transform;
@@ -88,6 +94,8 @@ namespace JGM.Game
                     }
                 }
             }
+
+            m_spawnActive = false;
         }
     }
 }

@@ -46,14 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924de04119c99f64fbb1af902af2913d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_animator: {fileID: 7826923556795127378}
+  m_boxCollider2D: {fileID: 9193680916462104863}
   m_moveSpeed: 1
+  m_damagePower: 1
+  m_health: 1
+  m_leftLimit: -9
   m_rotationSpeed: 60
   m_frequency: 0.5
   m_magnitude: 3
-  m_damagePower: 1
-  m_health: 1
-  m_animator: {fileID: 7826923556795127378}
-  m_leftLimit: -9
 --- !u!61 &9193680916462104863
 BoxCollider2D:
   m_ObjectHideFlags: 0

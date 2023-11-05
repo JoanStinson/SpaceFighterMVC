@@ -6,6 +6,7 @@ namespace JGM.Game
     {
         [Header("Enemy Generic")]
         [SerializeField] protected Animator m_animator;
+        [SerializeField] private BoxCollider2D m_boxCollider2D;
         [SerializeField] protected float m_moveSpeed = 0.1f;
         [SerializeField] protected float m_damagePower = 1f;
         [SerializeField] protected float m_health = 1f;
@@ -25,6 +26,7 @@ namespace JGM.Game
             m_startMovingUp = startMovingUp;
             m_dead = false;
             m_animator.Play("Idle");
+            m_boxCollider2D.enabled = true;
         }
 
         private void Update()
@@ -58,6 +60,7 @@ namespace JGM.Game
         public virtual void TakeDamage(float damageAmount)
         {
             m_animator.Play("Explosion");
+            m_boxCollider2D.enabled = false;
             m_dead = true;
         }
 

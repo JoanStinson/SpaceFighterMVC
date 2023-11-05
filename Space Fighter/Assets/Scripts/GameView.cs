@@ -45,9 +45,9 @@ namespace JGM.Game
 
         public void OnClickRetryButton()
         {
-            m_gameModel.Reset();
             m_gameOverView.Hide();
             m_playView.Show();
+            m_gameModel.Reset();
         }
 
         public async void OnPlayerKilled()

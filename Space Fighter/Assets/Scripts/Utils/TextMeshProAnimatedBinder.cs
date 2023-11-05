@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using TMPro;
-using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace JGM.Game
@@ -51,7 +50,7 @@ namespace JGM.Game
                 }
 
                 OnStartAnimation?.Invoke();
-                m_animateCoroutine = StartCoroutine(Animate(delay));
+                 m_animateCoroutine = StartCoroutine(Animate(delay));
             }
         }
 

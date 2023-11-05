@@ -77,13 +77,19 @@ namespace JGM.Game
             m_boxCollider2D.enabled = false;
 
             yield return new WaitForSeconds(2);
+            ReturnShipToRegularState();
+        }
 
+        private void ReturnShipToRegularState()
+        {
             m_shipAnimator.Play("ShipIdle");
             foreach (var thruster in m_thrusters)
             {
                 thruster.Play("Thruster");
+                thruster.gameObject.SetActive(true);
             }
             m_boxCollider2D.enabled = true;
+            m_playerInput.enabled = true;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -97,12 +103,7 @@ namespace JGM.Game
         public void Show()
         {
             gameObject.SetActive(true);
-            m_shipAnimator.Play("ShipIdle");
-            foreach (var thruster in m_thrusters)
-            {
-                thruster.gameObject.SetActive(true);
-            }
-            m_playerInput.enabled = true;
+            ReturnShipToRegularState();
         }
 
         public void Hide()
