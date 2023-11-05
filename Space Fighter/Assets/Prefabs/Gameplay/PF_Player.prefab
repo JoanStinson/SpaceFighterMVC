@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 2301114494026867872}
   - component: {fileID: 7222632679979207500}
   - component: {fileID: 2871911891365505177}
+  - component: {fileID: 8653725795123811851}
   - component: {fileID: 1875906741359606240}
   - component: {fileID: 6876155948209952483}
   m_Layer: 0
@@ -256,18 +257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355fa4d3c4a1ea94b9f4f7861254dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 50000
-  m_moveSmoothTime: 0.35
-  m_moveScreenPadding: 4
-  m_damagePower: 0
   m_playerInput: {fileID: 2301114494026867872}
-  m_playerWeapon: {fileID: 7222632679979207500}
-  m_bulletLauncher: {fileID: 2871911891365505177}
+  m_boxCollider2D: {fileID: 6876155948209952483}
   m_shipAnimator: {fileID: 1158672059443009709}
   m_thrusters:
   - {fileID: 1131250598144465910}
   - {fileID: 7329022261360402970}
-  m_boxCollider2D: {fileID: 6876155948209952483}
+  m_moveSpeed: 50000
+  m_moveSmoothTime: 0.35
+  m_moveScreenPadding: 4
+  m_damagePower: 0
+  m_playerWeapon: {fileID: 7222632679979207500}
+  m_bulletLauncher: {fileID: 2871911891365505177}
+  m_missileLauncher: {fileID: 8653725795123811851}
   m_weaponMountPoint: {fileID: 4968877362937128149}
 --- !u!114 &2301114494026867872
 MonoBehaviour:
@@ -310,6 +312,21 @@ MonoBehaviour:
   m_bulletsPoolSize: 10
   m_bulletsPoolParent: {fileID: 0}
   m_bulletPrefab: {fileID: 1651817784549151153, guid: 212500a9a130d8645b4e900cd4f70315, type: 3}
+--- !u!114 &8653725795123811851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275095155418211661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89d67721bf68d04c82e7e71f58e2f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_missilesPoolSize: 10
+  m_missilesPoolParent: {fileID: 0}
+  m_missilePrefab: {fileID: 3067374506418977517, guid: 06ec231bb48dd0a47b9be04ea26ee66e, type: 3}
 --- !u!50 &1875906741359606240
 Rigidbody2D:
   serializedVersion: 4

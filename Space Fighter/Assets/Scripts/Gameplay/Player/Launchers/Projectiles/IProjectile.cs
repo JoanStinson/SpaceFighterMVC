@@ -4,6 +4,6 @@ namespace JGM.Game
 {
     public interface IProjectile
     {
-        void Launch(Transform mountPoint, ComponentPool<BulletView> pool, GameModel gameModel);
+        void Launch(Transform mountPoint, ComponentPool<ProjectileView> pool, GameModel gameModel);
     }
 }

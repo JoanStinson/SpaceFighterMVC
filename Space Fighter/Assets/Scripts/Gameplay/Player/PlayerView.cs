@@ -6,19 +6,22 @@ namespace JGM.Game
 {
     public class PlayerView : MonoBehaviour, IDamageable
     {
+        [Header("General")]
+        [SerializeField] private PlayerInput m_playerInput;
+        [SerializeField] private BoxCollider2D m_boxCollider2D;
+        [SerializeField] private Animator m_shipAnimator;
+        [SerializeField] private Animator[] m_thrusters;
+
         [Header("Stats")]
         [SerializeField] private float m_moveSpeed = 0.1f;
         [SerializeField] private float m_moveSmoothTime = 0.3f;
         [SerializeField] private float m_moveScreenPadding = 4f;
         [SerializeField] private float m_damagePower = 0f;
 
-        [Header("Dependencies")]
-        [SerializeField] private PlayerInput m_playerInput;
+        [Header("Weapon")]
         [SerializeField] private PlayerWeapon m_playerWeapon;
         [SerializeField] private BulletLauncher m_bulletLauncher;
-        [SerializeField] private Animator m_shipAnimator;
-        [SerializeField] private Animator[] m_thrusters;
-        [SerializeField] private BoxCollider2D m_boxCollider2D;
+        [SerializeField] private MissileLauncher m_missileLauncher;
         [SerializeField] private Animator m_weaponMountPoint;
 
         [Inject]
@@ -27,17 +30,21 @@ namespace JGM.Game
         private GameModel m_gameModel;
         private Vector3 m_velocity = Vector3.zero;
 
+        public int scorePoints => 0;
+
         public void Initialize(GameView gameView, GameModel gameModel)
         {
             m_gameView = gameView;
             m_gameModel = gameModel;
             m_playerInput.onFireWeapon += FireWeapon;
             m_bulletLauncher.Initialize(gameModel);
+            m_missileLauncher.Initialize(gameModel);
         }
 
         private void FireWeapon()
         {
-            m_playerWeapon.FireWeapon(m_bulletLauncher);
+            var launcher = m_playerInput.bulletsSelected ? m_bulletLauncher as ILauncher: m_missileLauncher;
+            m_playerWeapon.FireWeapon(launcher);
             m_weaponMountPoint.Play("MountPoint");
         }
 

@@ -11,12 +11,12 @@ namespace JGM.Game
         [SerializeField] private BulletView m_bulletPrefab;
 
         private GameModel m_gameModel;
-        private ComponentPool<BulletView> m_bulletsPool;
+        private ComponentPool<ProjectileView> m_bulletsPool;
 
         public void Initialize(GameModel gameModel)
         {
             m_gameModel = gameModel;
-            m_bulletsPool = new ComponentPool<BulletView>(m_bulletsPoolSize, m_bulletsPoolParent, m_bulletPrefab);
+            m_bulletsPool = new ComponentPool<ProjectileView>(m_bulletsPoolSize, m_bulletsPoolParent, m_bulletPrefab);
         }
 
         public void Launch(PlayerWeapon weapon)

@@ -4,6 +4,8 @@ namespace JGM.Game
 {
     public abstract class EnemyView : MonoBehaviour, IDamageable
     {
+        public int scorePoints => m_scorePoints;
+
         [Header("Enemy Generic")]
         [SerializeField] protected Animator m_animator;
         [SerializeField] private BoxCollider2D m_boxCollider2D;
@@ -11,6 +13,7 @@ namespace JGM.Game
         [SerializeField] protected float m_damagePower = 1f;
         [SerializeField] protected float m_health = 1f;
         [SerializeField] private float m_leftLimit = -9f;
+        [SerializeField] private int m_scorePoints = 100;
 
         protected Vector3 m_startPosition;
         protected bool m_startMovingUp;
