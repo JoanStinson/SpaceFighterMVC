@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bulletsPoolSize: 10
-  m_bulletsPoolParent: {fileID: 0}
+  m_bulletsPoolParent: {fileID: 275095155418211660}
   m_bulletPrefab: {fileID: 1651817784549151153, guid: 212500a9a130d8645b4e900cd4f70315, type: 3}
 --- !u!114 &8653725795123811851
 MonoBehaviour:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_missilesPoolSize: 10
-  m_missilesPoolParent: {fileID: 0}
+  m_missilesPoolParent: {fileID: 275095155418211660}
   m_missilePrefab: {fileID: 3067374506418977517, guid: 06ec231bb48dd0a47b9be04ea26ee66e, type: 3}
 --- !u!50 &1875906741359606240
 Rigidbody2D:

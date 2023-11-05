@@ -7,9 +7,11 @@ namespace JGM.Game
 {
     public sealed class AudioService : MonoBehaviour, IAudioService
     {
-        [SerializeField]
-        [Range(1, 20)]
+        [SerializeField, Range(1, 20)]
         private int m_maxSimultaneousAudioSources = 10;
+
+        [SerializeField]
+        private Transform m_poolParent;
 
         [Inject] private AudioLibrary m_audioAssets;
         [Inject] private ICoroutineService m_coroutineService;
@@ -25,7 +27,7 @@ namespace JGM.Game
 
         public void Initialize()
         {
-            m_pool = new ComponentPool<AudioSource>(m_maxSimultaneousAudioSources, transform);
+            m_pool = new ComponentPool<AudioSource>(m_maxSimultaneousAudioSources, m_poolParent);
             m_audioLibrary = new Dictionary<string, AudioClip>();
 
             if (m_audioAssets != null)
