@@ -1,5 +1,4 @@
-﻿using System;
-using Random = UnityEngine.Random;
+﻿using Random = UnityEngine.Random;
 
 namespace JGM.Game
 {
@@ -11,7 +10,7 @@ namespace JGM.Game
         public void ReadInput()
         {
             vertical = Random.Range(-1f, 1f);
-            shootProjectile = Convert.ToBoolean(Random.Range(0, 1));
+            shootProjectile = (Random.Range(0, 100) == 0);
         }
     }
 }
