@@ -11,20 +11,9 @@ namespace JGM.Game
 
         public override void InstallBindings()
         {
-            BindServices();
-            BindPrefabs();
-        }
-
-        private void BindServices()
-        {
             Container.Bind<IAudioService>().FromInstance(m_audioServiceInstance);
             Container.Bind<ICoroutineService>().FromInstance(m_coroutineServiceInstance);
             Container.Bind<ILocalizationService>().To<LocalizationService>().AsSingle();
-        }
-
-        private void BindPrefabs()
-        {
-
         }
     }
 }

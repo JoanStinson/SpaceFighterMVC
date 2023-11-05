@@ -84,8 +84,6 @@ namespace JGM.Game
                     }
                 }
             }
-
-            //m_spawnActive = false;
         }
     }
 }

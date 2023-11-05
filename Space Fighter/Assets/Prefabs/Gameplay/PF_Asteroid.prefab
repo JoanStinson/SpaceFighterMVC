@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7746922081570542214}
   - component: {fileID: 6730788173942048346}
   - component: {fileID: 2406872261990579100}
+  - component: {fileID: 2930495274819711234}
   m_Layer: 0
   m_Name: PF_Asteroid
   m_TagString: Untagged
@@ -53,6 +54,7 @@ MonoBehaviour:
   m_damagePower: 1
   m_health: 1
   m_leftLimit: -9
+  m_scorePoints: 100
   m_rotationSpeed: 30
   m_frequency: 0.5
   m_magnitude: 2
@@ -168,3 +170,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2930495274819711234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176701964663368599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 0

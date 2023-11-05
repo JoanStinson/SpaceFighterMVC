@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace JGM.Game
 {
@@ -15,6 +16,8 @@ namespace JGM.Game
         [SerializeField] private float m_leftLimit = -9f;
         [SerializeField] private int m_scorePoints = 100;
 
+        [Inject]
+        private IAudioService m_audioService;
         protected Vector3 m_startPosition;
         protected bool m_startMovingUp;
         protected bool m_dead;
@@ -63,6 +66,7 @@ namespace JGM.Game
         public virtual void TakeDamage(float damageAmount)
         {
             m_animator.Play("Explosion");
+            m_audioService.Play(AudioFileNames.explosionSfx);
             m_boxCollider2D.enabled = false;
             m_dead = true;
         }
