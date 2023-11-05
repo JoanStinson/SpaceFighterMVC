@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace JGM.Game
 {
@@ -9,6 +10,8 @@ namespace JGM.Game
         [SerializeField] private Button m_retryButton;
         [SerializeField] private Button m_quitButton;
 
+        [Inject]
+        private IAudioService m_audioService;
         private GameView m_gameView;
         private GameModel m_gameModel;
 
@@ -24,11 +27,13 @@ namespace JGM.Game
         private void OnClickRetryButton()
         {
             m_gameView.OnClickRetryButton();
+            m_audioService.Play(AudioFileNames.buttonClickSfx);
         }
 
         private void OnClickQuitButton()
         {
             m_gameView.OnClickQuitButton();
+            m_audioService.Play(AudioFileNames.buttonClickSfx);
         }
 
         public override void Show()

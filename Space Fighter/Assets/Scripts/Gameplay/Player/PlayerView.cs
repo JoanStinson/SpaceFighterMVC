@@ -9,6 +9,7 @@ namespace JGM.Game
         [Header("General")]
         [SerializeField] private PlayerInput m_playerInput;
         [SerializeField] private BoxCollider2D m_boxCollider2D;
+        [SerializeField] private SpriteRenderer m_shipSprite;
         [SerializeField] private Animator m_shipAnimator;
         [SerializeField] private Animator[] m_thrusters;
 
@@ -24,8 +25,9 @@ namespace JGM.Game
         [SerializeField] private MissileLauncher m_missileLauncher;
         [SerializeField] private Animator m_weaponMountPoint;
 
-        [Inject]
-        private ICoroutineService m_coroutineService;
+        [Inject] private ICoroutineService m_coroutineService;
+        [Inject] private IAudioService m_audioService;
+
         private GameView m_gameView;
         private GameModel m_gameModel;
         private Vector3 m_velocity = Vector3.zero;
@@ -43,9 +45,11 @@ namespace JGM.Game
 
         private void FireWeapon()
         {
-            var launcher = m_playerInput.bulletsSelected ? m_bulletLauncher as ILauncher: m_missileLauncher;
+            var launcher = m_playerInput.bulletsSelected ? m_bulletLauncher as ILauncher : m_missileLauncher;
             m_playerWeapon.FireWeapon(launcher);
             m_weaponMountPoint.Play("MountPoint");
+            string audioSfx = m_playerInput.bulletsSelected ? AudioFileNames.bulletSfx : AudioFileNames.missileSfx;
+            m_audioService.Play(audioSfx);
         }
 
         private void Update()
@@ -60,17 +64,21 @@ namespace JGM.Game
             m_gameModel.currentHealth -= damageAmount;
             if (m_gameModel.currentHealth <= 0)
             {
+                m_boxCollider2D.enabled = false;
                 m_playerInput.enabled = false;
                 m_shipAnimator.Play("ShipExplosion");
                 foreach (var thruster in m_thrusters)
                 {
                     thruster.gameObject.SetActive(false);
                 }
+                StopAllCoroutines();
                 m_gameView.OnPlayerKilled();
+                m_audioService.Play(AudioFileNames.playerDieSfx);
             }
             else
             {
                 m_coroutineService.StartExternalCoroutine(FlashPlayer());
+                m_audioService.Play(AudioFileNames.playerHitSfx);
             }
         }
 
@@ -111,11 +119,17 @@ namespace JGM.Game
         {
             gameObject.SetActive(true);
             ReturnShipToRegularState();
+            m_shipSprite.enabled = true;
         }
 
         public void Hide()
         {
             gameObject.SetActive(false);
+        }
+
+        public void HidePlayer()
+        {
+            m_shipSprite.enabled = false;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using UnityEngine;
+using Zenject;
 
 namespace JGM.Game
 {
@@ -14,16 +15,17 @@ namespace JGM.Game
         [SerializeField] private PlayerView m_player;
         [SerializeField] private EnemiesSpawner m_enemiesSpawner;
 
+        [Inject] private ILocalizationService m_localizatioService;
+        [Inject] private IAudioService m_audioService;
+
         private GameView m_gameView;
         private GameModel m_gameModel;
-        private ILocalizationService m_localizatioService;
 
-        public void Initialize(GameView gameView, GameModel gameModel, ILocalizationService localizationService)
+        public void Initialize(GameView gameView, GameModel gameModel)
         {
             m_gameView = gameView;
             m_gameModel = gameModel;
             m_gameModel.PropertyChanged += OnPropertyChanged;
-            m_localizatioService = localizationService;
             m_player.Initialize(m_gameView, m_gameModel);
         }
 
@@ -49,6 +51,7 @@ namespace JGM.Game
             SetHealthBar(m_gameModel);
             m_player.Show();
             m_enemiesSpawner.Spawn(m_gameModel);
+            m_audioService.Play(AudioFileNames.backgroundMusic, true);
         }
 
         public override void Hide()
@@ -57,6 +60,7 @@ namespace JGM.Game
             m_gameplayView.gameObject.SetActive(false);
             m_player.Hide();
             m_enemiesSpawner.Return();
+            m_audioService.StopMusic();
         }
 
         private void SetHealthBar(GameModel gameModel)

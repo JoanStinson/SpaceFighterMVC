@@ -16,6 +16,7 @@ namespace JGM.Game
 
         private ComponentPool<AudioSource> m_pool;
         private Dictionary<string, AudioClip> m_audioLibrary;
+        private AudioSource m_musicAudioSource;
 
         private void Awake()
         {
@@ -56,6 +57,12 @@ namespace JGM.Game
                 {
                     var coroutine = DisableAudioSourceAfterFinishedPlaying(audioSource, audioClip.length);
                     m_coroutineService.StartExternalCoroutine(coroutine);
+                    audioSource.volume = 1f;
+                }
+                else
+                {
+                    audioSource.volume = 0.4f;
+                    m_musicAudioSource = audioSource;
                 }
             }
             else
@@ -75,6 +82,11 @@ namespace JGM.Game
             m_audioAssets = audioLibrary;
             m_coroutineService = coroutineService;
             m_pool = pool;
+        }
+
+        public void StopMusic()
+        {
+            m_musicAudioSource?.Stop();
         }
     }
 }

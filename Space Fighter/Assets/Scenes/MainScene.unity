@@ -4910,6 +4910,10 @@ PrefabInstance:
       propertyPath: m_bulletsPoolParent
       value: 
       objectReference: {fileID: 1612146131}
+    - target: {fileID: 4550737162985002711, guid: 48ec810b9b553574d8aa8ffda1569d28, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7528316065772962462, guid: 48ec810b9b553574d8aa8ffda1569d28, type: 3}
       propertyPath: m_missileLauncher
       value: 

@@ -25,7 +25,7 @@ namespace JGM.Game
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
             m_mainMenuView.Show();
 
-            m_playView.Initialize(this, m_gameModel, m_localizationService);
+            m_playView.Initialize(this, m_gameModel);
             m_playView.Hide();
 
             m_gameOverView.Initialize(this, m_gameModel);

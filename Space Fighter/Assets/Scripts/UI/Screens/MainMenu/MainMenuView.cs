@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace JGM.Game
 {
@@ -9,6 +10,8 @@ namespace JGM.Game
         [SerializeField] private Button m_quitButton;
         [SerializeField] private Button m_languageButton;
 
+        [Inject]
+        private IAudioService m_audioService;
         private GameView m_gameView;
         private MainMenuController m_controller;
 
@@ -25,16 +28,19 @@ namespace JGM.Game
         private void OnClickPlayButton()
         {
             m_gameView.OnClickPlayButton();
+            m_audioService.Play(AudioFileNames.buttonClickSfx);
         }
 
         private void OnClickQuitButton()
         {
             m_gameView.OnClickQuitButton();
+            m_audioService.Play(AudioFileNames.buttonClickSfx);
         }
 
         private void OnClickLanguageButton()
         {
             m_controller.ChangeLanguageRandomly();
+            m_audioService.Play(AudioFileNames.buttonClickSfx);
         }
     }
 }
