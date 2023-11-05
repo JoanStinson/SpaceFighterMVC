@@ -57,11 +57,9 @@ namespace JGM.Game
                 {
                     var coroutine = DisableAudioSourceAfterFinishedPlaying(audioSource, audioClip.length);
                     m_coroutineService.StartExternalCoroutine(coroutine);
-                    audioSource.volume = 1f;
                 }
                 else
                 {
-                    audioSource.volume = 0.4f;
                     m_musicAudioSource = audioSource;
                 }
             }

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_damagePower: 1
   m_health: 1
   m_leftLimit: -9
-  m_scorePoints: 100
+  m_scorePoints: 0
   m_rotationSpeed: 30
   m_frequency: 0.5
   m_magnitude: 2

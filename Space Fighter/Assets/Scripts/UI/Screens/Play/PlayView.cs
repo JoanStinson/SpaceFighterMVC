@@ -35,7 +35,13 @@ namespace JGM.Game
 
             if (e.PropertyName == "score")
             {
-                m_scoreText.SetValueAnimated(gameModel.score, $"{m_localizatioService.Localize("TID_SCORE")} ");
+                string prefixText = $"{m_localizatioService.Localize("TID_SCORE")} ";
+                m_scoreText.SetValueAnimated(gameModel.score, prefixText);
+
+                if (gameModel.score > 0)
+                {
+                    m_audioService.Play(AudioFileNames.increaseScoreSfx);
+                }
             }
             else if (e.PropertyName == "currentHealth")
             {
@@ -47,7 +53,8 @@ namespace JGM.Game
         {
             base.Show();
             m_gameplayView.gameObject.SetActive(true);
-            m_scoreText.SetValue(m_gameModel.score, $"{m_localizatioService.Localize("TID_SCORE")} ");
+            string prefixText = $"{m_localizatioService.Localize("TID_SCORE")} ";
+            m_scoreText.SetValue(m_gameModel.score, prefixText);
             SetHealthBar(m_gameModel);
             m_player.Show();
             m_enemiesSpawner.Spawn(m_gameModel);

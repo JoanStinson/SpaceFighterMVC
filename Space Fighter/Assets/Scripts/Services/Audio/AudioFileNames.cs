@@ -9,5 +9,6 @@
         public const string explosionSfx = "DESTROY_1";
         public const string playerDieSfx = "GAME_OVER_1";
         public const string playerHitSfx = "hit";
+        public const string increaseScoreSfx = "coin-pickup";
     }
 }
