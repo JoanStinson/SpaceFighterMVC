@@ -16,15 +16,15 @@ namespace JGM.Game
 
         private GameView m_gameView;
         private GameModel m_gameModel;
-        private string m_scoreName;
+        private ILocalizationService m_localizatioService;
 
         public void Initialize(GameView gameView, GameModel gameModel, ILocalizationService localizationService)
         {
             m_gameView = gameView;
             m_gameModel = gameModel;
             m_gameModel.PropertyChanged += OnPropertyChanged;
+            m_localizatioService = localizationService;
             m_player.Initialize(m_gameView, m_gameModel);
-            m_scoreName = $"{localizationService.Localize("TID_SCORE")} ";
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -33,7 +33,7 @@ namespace JGM.Game
 
             if (e.PropertyName == "score")
             {
-                m_scoreText.SetValueAnimated(gameModel.score, m_scoreName);
+                m_scoreText.SetValueAnimated(gameModel.score, $"{m_localizatioService.Localize("TID_SCORE")} ");
             }
             else if (e.PropertyName == "currentHealth")
             {
@@ -45,7 +45,7 @@ namespace JGM.Game
         {
             base.Show();
             m_gameplayView.gameObject.SetActive(true);
-            m_scoreText.SetValue(m_gameModel.score, m_scoreName);
+            m_scoreText.SetValue(m_gameModel.score, $"{m_localizatioService.Localize("TID_SCORE")} ");
             SetHealthBar(m_gameModel);
             m_player.Show();
             m_enemiesSpawner.Spawn(m_gameModel);

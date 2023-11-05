@@ -44,15 +44,15 @@ namespace JGM.Game
             }
         }
 
-        private void Update()
+        private async void Update()
         {
             if (m_spawnActive)
             {
-                SpawnEnemies();
+                await SpawnEnemies();
             }
         }
 
-        private async void SpawnEnemies()
+        private async Task SpawnEnemies()
         {
             for (int i = 0; i < m_gameModel.enemySettings.Length; i++)
             {
@@ -60,6 +60,7 @@ namespace JGM.Game
 
                 for (int j = 0; j < m_gameModel.enemySettings[i].spawnAmount; j++)
                 {
+                    await Task.Delay(TimeSpan.FromSeconds(5f));
                     var enemy = enemyPool.Get();
 
                     if (enemy != null)
@@ -67,11 +68,10 @@ namespace JGM.Game
                         enemy.Initialize(GetRandomStartPosition(), enemyPool, j % 2 == 0);
                     }
                     
-                    await Task.Delay(TimeSpan.FromSeconds(m_gameModel.enemySettings[i].delayBetweenSpawnsInSeconds));
                 }
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(m_delayBetweenSpawnsInSeconds));
+            await Task.Delay(TimeSpan.FromSeconds(12));
         }
 
         private Vector2 GetRandomStartPosition()
