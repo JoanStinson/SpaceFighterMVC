@@ -127,6 +127,7 @@ namespace JGM.Game
             gameObject.SetActive(false);
         }
 
+        // Used on Explosion Animation Event
         public void HidePlayer()
         {
             m_shipSprite.enabled = false;

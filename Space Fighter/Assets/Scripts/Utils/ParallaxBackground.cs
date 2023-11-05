@@ -10,7 +10,8 @@ namespace JGM.Game
 
         private void Update()
         {
-            transform.localPosition = new Vector3(transform.localPosition.x + m_scrollSpeed * Time.deltaTime, transform.localPosition.y, transform.localPosition.z);
+            float localPositionX = transform.localPosition.x + m_scrollSpeed * Time.deltaTime;
+            transform.localPosition = new Vector3(localPositionX, transform.localPosition.y, transform.localPosition.z);
 
             if (transform.localPosition.x <= m_leftEdge)
             {

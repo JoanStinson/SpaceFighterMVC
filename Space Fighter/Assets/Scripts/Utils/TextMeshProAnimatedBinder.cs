@@ -50,7 +50,7 @@ namespace JGM.Game
                 }
 
                 OnStartAnimation?.Invoke();
-                 m_animateCoroutine = StartCoroutine(Animate(delay));
+                m_animateCoroutine = StartCoroutine(Animate(delay));
             }
         }
 

@@ -35,7 +35,6 @@ namespace JGM.Game
         }
 
         public float maxHealth { get; set; }
-
         public GameSettings.EnemySettings[] enemySettings { get; private set; }
 
         public GameModel(int score, float maxHealth, GameSettings.EnemySettings[] enemies)

@@ -38,7 +38,7 @@ namespace JGM.Game
             {
                 ChangeInputService();
             }
-            
+
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 ChangeWeapon();

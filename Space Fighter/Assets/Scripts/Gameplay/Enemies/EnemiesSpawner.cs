@@ -56,7 +56,7 @@ namespace JGM.Game
                     {
                         enemy.Initialize(GetRandomStartPosition(), enemyPool, j % 2 == 0);
                     }
-                    
+
                     await Task.Delay(TimeSpan.FromSeconds(0.5f));
                 }
             }

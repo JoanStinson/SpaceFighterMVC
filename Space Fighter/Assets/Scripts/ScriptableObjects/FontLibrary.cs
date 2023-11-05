@@ -17,12 +17,12 @@ namespace JGM.Game
 
         [SerializeField]
         private List<FontEntry> m_fontEntries = new List<FontEntry>();
-
-        private Dictionary<string, TMP_FontAsset> m_fontDictionary = new Dictionary<string, TMP_FontAsset>();
+        private readonly Dictionary<string, TMP_FontAsset> m_fontDictionary = new Dictionary<string, TMP_FontAsset>();
 
         private void OnEnable()
         {
             m_fontDictionary.Clear();
+
             foreach (var entry in m_fontEntries)
             {
                 if (!m_fontDictionary.ContainsKey(entry.fontName))
