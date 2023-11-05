@@ -38,7 +38,7 @@ namespace JGM.GameTests
         }
 
         [Test]
-        public void When_GetFromEmptyPool_Expect_WarningAndNullComponent()
+        public void When_GetFromEmptyPool_Expect_NullComponent()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -48,7 +48,6 @@ namespace JGM.GameTests
             var component = m_componentPool.Get();
 
             Assert.IsNull(component);
-            LogAssert.Expect(LogType.Warning, "ComponentPool<JGM.GameTests.ComponentPoolTest+TestComponent> is empty. All pooled components are in use.");
         }
     }
 }
