@@ -18,13 +18,13 @@ namespace JGM.Game
 
         private GameModel m_gameModel;
         private readonly List<ComponentPool<EnemyView>> m_enemyPools = new List<ComponentPool<EnemyView>>();
-        private bool m_spawn;
+        private bool m_spawnActive;
 
         public void Spawn(GameModel gameModel)
         {
             m_gameModel = gameModel;
             CreateEnemyPools(gameModel);
-            m_spawn = true;
+            m_spawnActive = true;
         }
 
         private void CreateEnemyPools(GameModel gameModel)
@@ -38,18 +38,15 @@ namespace JGM.Game
             }
         }
 
-        private async void Update()
+        private void Update()
         {
-            if (!m_spawn)
+            if (m_spawnActive)
             {
-                return;
+                SpawnEnemies();
             }
-
-            await Task.Delay(TimeSpan.FromSeconds(m_delayBetweenSpawnsInSeconds));
-            SpawnEnemies();
         }
 
-        private void SpawnEnemies()
+        private async void SpawnEnemies()
         {
             for (int i = 0; i < m_gameModel.enemySettings.Length; i++)
             {
@@ -63,8 +60,12 @@ namespace JGM.Game
                     {
                         enemy.Initialize(GetRandomStartPosition(), enemyPool, j % 2 == 0);
                     }
+                    
+                    await Task.Delay(TimeSpan.FromSeconds(m_gameModel.enemySettings[i].delayBetweenSpawnsInSeconds));
                 }
             }
+
+            await Task.Delay(TimeSpan.FromSeconds(m_delayBetweenSpawnsInSeconds));
         }
 
         private Vector2 GetRandomStartPosition()

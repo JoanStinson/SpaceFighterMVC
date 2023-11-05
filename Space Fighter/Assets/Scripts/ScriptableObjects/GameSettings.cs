@@ -23,6 +23,7 @@ namespace JGM.Game
             public EnemyView enemyPrefab;
             [Range(1, 20)] public int poolSize = 10;
             [Range(1, 20)] public int spawnAmount = 5;
+            [Range(0f, 30f)] public float delayBetweenSpawnsInSeconds = 5f;
         }
     }
 }
