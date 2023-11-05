@@ -8,11 +8,13 @@ namespace JGM.Game
     {
         [SerializeField] private AudioLibrary m_audioLibraryInstance;
         [SerializeField] private FontLibrary m_fontLibrary;
+        [SerializeField] private GameSettings m_gameSettingsInstance;
 
         public override void InstallBindings()
         {
             Container.Bind<AudioLibrary>().FromInstance(m_audioLibraryInstance);
             Container.Bind<FontLibrary>().FromInstance(m_fontLibrary);
+            Container.Bind<GameSettings>().FromInstance(m_gameSettingsInstance);
         }
     }
 }

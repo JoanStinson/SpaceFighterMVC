@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audioLibraryInstance: {fileID: 11400000, guid: 4b380073b9353ad429dae344d09b2d50, type: 2}
   m_fontLibrary: {fileID: 11400000, guid: 29c5764fe37709246b241d8177ad7093, type: 2}
+  m_gameSettingsInstance: {fileID: 11400000, guid: bcab8c4bdee8cb447b2e910075854c0e, type: 2}

@@ -11,15 +11,16 @@ namespace JGM.Game
         [SerializeField] private PlayView m_playView;
         [SerializeField] private GameOverView m_gameOverView;
 
-        [Inject]
-        private ILocalizationService m_localizationService;
+        [Inject] private ILocalizationService m_localizationService;
+        [Inject] private GameSettings m_gameSettings;
+
         private GameController m_gameController;
         private GameModel m_gameModel;
 
         public void Initialize(GameController gameController)
         {
             m_gameController = gameController;
-            m_gameModel = m_gameController.GetGameModel();
+            m_gameModel = m_gameController.GetGameModel(m_gameSettings);
 
             m_mainMenuView.Initialize(this, new MainMenuController(m_localizationService));
             m_mainMenuView.Hide();
