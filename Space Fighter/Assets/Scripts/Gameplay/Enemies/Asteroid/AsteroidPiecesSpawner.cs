@@ -23,8 +23,8 @@ namespace JGM.Game
             for (int i = 0; i < m_amountOfPieces; i++)
             {
                 var spawnedAsteroidPiece = Instantiate(m_asteroidPiecePrefab);
-                bool startAsteroidMovingUp = i % 2 == 0;
-                spawnedAsteroidPiece.Initialize(startAsteroidMovingUp, m_asteroidToSubscribe.transform.position, null);
+                spawnedAsteroidPiece.transform.SetParent(m_asteroidToSubscribe.transform.parent.parent);
+                spawnedAsteroidPiece.Initialize(m_asteroidToSubscribe.transform.position, null, i % 2 == 0);
             }
         }
     }

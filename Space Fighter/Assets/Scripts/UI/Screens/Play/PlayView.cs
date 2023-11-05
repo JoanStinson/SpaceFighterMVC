@@ -46,7 +46,7 @@ namespace JGM.Game
             m_scoreText.SetValue(m_gameModel.score, m_scoreName);
             SetHealthBar(m_gameModel);
             m_player.Show();
-            m_enemiesSpawner.Spawn();
+            m_enemiesSpawner.Spawn(m_gameModel);
         }
 
         public override void Hide()

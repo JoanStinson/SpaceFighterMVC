@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace JGM.Game
 {
@@ -7,12 +8,21 @@ namespace JGM.Game
     {
         public int initialScore => m_initialScore;
         public float maxHealth => m_maxHealth;
+        public EnemySettings[] enemies => m_enemies;
 
         [Header("Play Settings")]
         [SerializeField] private int m_initialScore = 0;
         [SerializeField] private float m_maxHealth = 5;
 
-        //[Header("Enemies")]
+        [Header("Enemies")]
+        [SerializeField] private EnemySettings[] m_enemies;
 
+        [Serializable]
+        public class EnemySettings
+        {
+            public EnemyView enemyPrefab;
+            [Range(1, 20)] public int poolSize = 10;
+            [Range(1, 20)] public int spawnAmount = 5;
+        }
     }
 }

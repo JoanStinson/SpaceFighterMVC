@@ -15,14 +15,7 @@
 
         public GameModel GetGameModel(GameSettings gameSettings)
         {
-            if (m_gameModel == null)
-            {
-                m_gameModel = new GameModel();
-                m_gameModel.score = gameSettings.initialScore;
-                m_gameModel.currentHealth = gameSettings.maxHealth;
-                m_gameModel.maxHealth = gameSettings.maxHealth;
-            }
-
+            m_gameModel ??= new GameModel(gameSettings.initialScore, gameSettings.maxHealth, gameSettings.enemies);
             return m_gameModel;
         }
     }

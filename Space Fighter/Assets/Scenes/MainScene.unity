@@ -1985,8 +1985,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1184974476}
+  m_Children: []
   m_Father: {fileID: 1959311635}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2002,10 +2001,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5bf31b9c7a2a14cba41a127fd4a7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_asteroidsPoolSize: 5
-  m_asteroidsPoolParent: {fileID: 1184974476}
-  m_asteroidPrefab: {fileID: 5016989561208278870, guid: 60738ae74de6a9a4f8db1230310c6e3a, type: 3}
-  m_asteroidsAmount: 1
+  m_delayBetweenSpawnsInSeconds: 5
+  m_bottomLimitSpawn: -3.85
+  m_topLimitSpawn: 3.85
+  m_leftLimitSpawn: 9
+  m_rightLimitSpawn: 9
 --- !u!1 &1109092394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,36 +2229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171381703}
   m_CullTransparentMesh: 1
---- !u!1 &1184974475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1184974476}
-  m_Layer: 0
-  m_Name: AsteroidsPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1184974476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184974475}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1095089611}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1270848903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275095155418211660, guid: 48ec810b9b553574d8aa8ffda1569d28, type: 3}

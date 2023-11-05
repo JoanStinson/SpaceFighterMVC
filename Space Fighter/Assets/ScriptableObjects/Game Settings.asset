@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_initialScore: 0
   m_maxHealth: 5
+  m_enemies:
+  - enemyPrefab: {fileID: 5016989561208278870, guid: 60738ae74de6a9a4f8db1230310c6e3a, type: 3}
+    poolSize: 3
+    spawnAmount: 2

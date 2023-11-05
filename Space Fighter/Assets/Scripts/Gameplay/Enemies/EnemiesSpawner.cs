@@ -1,41 +1,84 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace JGM.Game
 {
     public class EnemiesSpawner : MonoBehaviour
     {
-        [Header("Asteroid")]
-        [SerializeField] private int m_asteroidsPoolSize;
-        [SerializeField] private Transform m_asteroidsPoolParent;
-        [SerializeField] private AsteroidView m_asteroidPrefab;
-        [SerializeField] private int m_asteroidsAmount;
+        [SerializeField, Range(0f, 30f)] 
+        private float m_delayBetweenSpawnsInSeconds = 5f;
 
-        //[Header("Asteroid Piece")]
-        //[SerializeField] private int m_asteroidPiecesPoolSize;
-        //[SerializeField] private Transform m_asteroidsPiecesPoolParent;
-        //[SerializeField] private AsteroidView m_asteroidPiecePrefab;
-        private List<AsteroidView> m_activeAsteroids = new List<AsteroidView>();
-        private ComponentPool<AsteroidView> m_asteroidsPool;
+        [SerializeField] private float m_bottomLimitSpawn = -3.85f;
+        [SerializeField] private float m_topLimitSpawn = 3.85f;
+        [SerializeField] private float m_leftLimitSpawn = 9f;
+        [SerializeField] private float m_rightLimitSpawn = 22f;
 
-        public void Spawn()
+        private GameModel m_gameModel;
+        private readonly List<ComponentPool<EnemyView>> m_enemyPools = new List<ComponentPool<EnemyView>>();
+        private bool m_spawn;
+
+        public void Spawn(GameModel gameModel)
         {
-            m_asteroidsPool ??= new ComponentPool<AsteroidView>(m_asteroidsPoolSize, m_asteroidsPoolParent, m_asteroidPrefab);
-            //var asteroidPiecesPool = new ComponentPool<AsteroidView>(m_asteroidPiecesPoolSize, m_asteroidsPiecesPoolParent, m_asteroidPiecePrefab);
+            m_gameModel = gameModel;
 
-            for (int i = 0; i < m_asteroidsAmount; i++)
+            foreach (var setting in gameModel.enemySettings)
             {
-                var spawnedAsteroid = m_asteroidsPool.Get();
-                spawnedAsteroid.Initialize(i % 2 == 0, Vector3.zero, m_asteroidsPool);
-                m_activeAsteroids.Add(spawnedAsteroid);
+                var poolParent = new GameObject("EnemyPool").transform;
+                poolParent.SetParent(transform);
+                var newEnemyPool = new ComponentPool<EnemyView>(setting.poolSize, poolParent, setting.enemyPrefab);
+                m_enemyPools.Add(newEnemyPool);
             }
+
+            m_spawn = true;
+        }
+
+        private async void Update()
+        {
+            if (!m_spawn)
+            {
+                return;
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(m_delayBetweenSpawnsInSeconds));
+
+            for (int i = 0; i < m_gameModel.enemySettings.Length; i++)
+            {
+                var enemyPool = m_enemyPools[i];
+
+                for (int j = 0; j < m_gameModel.enemySettings[i].spawnAmount; j++)
+                {
+                    var enemy = enemyPool.Get();
+
+                    if (enemy != null)
+                    {
+                        enemy.Initialize(GetRandomStartPosition(), enemyPool, j % 2 == 0);
+                    }
+                }
+            }
+        }
+
+        private Vector2 GetRandomStartPosition()
+        {
+            float xRandomPos = Random.Range(m_leftLimitSpawn, m_rightLimitSpawn);
+            float yRandomPos = Random.Range(m_bottomLimitSpawn, m_topLimitSpawn);
+            return new Vector2(xRandomPos, yRandomPos);
         }
 
         public void Return()
         {
-            foreach (var asteroid in m_activeAsteroids)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                m_asteroidsPool.Return(asteroid);
+                var poolParent = transform.GetChild(i);
+                foreach (Transform item in poolParent)
+                {
+                    if (item.TryGetComponent<EnemyView>(out var enemyView))
+                    {
+                        enemyView.Return();
+                    }
+                }
             }
         }
     }

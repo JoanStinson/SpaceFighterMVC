@@ -50,10 +50,11 @@ MonoBehaviour:
   m_moveSpeed: 0.5
   m_rotationSpeed: 30
   m_frequency: 0.5
-  m_magnitude: 4
+  m_magnitude: 2
   m_damagePower: 1
   m_health: 1
   m_animator: {fileID: 6730788173942048346}
+  m_leftLimit: -9
 --- !u!114 &4956856781649575292
 MonoBehaviour:
   m_ObjectHideFlags: 0

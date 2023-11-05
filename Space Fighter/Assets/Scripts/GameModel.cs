@@ -36,6 +36,16 @@ namespace JGM.Game
 
         public float maxHealth { get; set; }
 
+        public GameSettings.EnemySettings[] enemySettings { get; private set; }
+
+        public GameModel(int score, float maxHealth, GameSettings.EnemySettings[] enemies)
+        {
+            this.score = score;
+            this.currentHealth = maxHealth;
+            this.maxHealth = maxHealth;
+            this.enemySettings = enemies;
+        }
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

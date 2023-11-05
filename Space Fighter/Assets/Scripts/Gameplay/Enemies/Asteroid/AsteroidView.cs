@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace JGM.Game
 {
-    public class AsteroidView : MonoBehaviour, IDamageable
+    public class AsteroidView : EnemyView, IDamageable
     {
         public event Action OnAsteroidBreak = delegate { };
 
@@ -14,13 +14,14 @@ namespace JGM.Game
         [SerializeField] private float m_damagePower = 1f;
         [SerializeField] private float m_health = 1f;
         [SerializeField] private Animator m_animator;
+        [SerializeField] private float m_leftLimit = -9f;
 
-        private ComponentPool<AsteroidView> m_pool;
+        private ComponentPool<EnemyView> m_pool;
         private Vector3 m_newPosition;
         private bool m_startMovingUp;
         private bool m_dead;
 
-        public void Initialize(bool startMovingUp, Vector3 startPosition, ComponentPool<AsteroidView> pool)
+        public override void Initialize(Vector3 startPosition, ComponentPool<EnemyView> pool, bool startMovingUp)
         {
             m_startMovingUp = startMovingUp;
             transform.position = startPosition;
@@ -41,6 +42,11 @@ namespace JGM.Game
             m_newPosition -= Vector3.right * Time.deltaTime * m_moveSpeed;
             float sign = m_startMovingUp ? 1 : -1;
             transform.position = m_newPosition + (Vector3.up * sign) * Mathf.Sin(m_frequency * Time.time) * m_magnitude;
+
+            if (transform.position.x < m_leftLimit)
+            {
+                ReturnAsteroid();
+            }
         }
 
         public void TakeDamage(float damageAmount)
@@ -66,6 +72,11 @@ namespace JGM.Game
             {
                 damageable.TakeDamage(m_damagePower);
             }
+        }
+
+        public override void Return()
+        {
+            ReturnAsteroid();
         }
     }
 }
