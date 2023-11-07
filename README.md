@@ -23,7 +23,7 @@ Simple Asteroids-inspired game implementation using model-view-controller struct
 </p>
 
 <p align="center">
-  <img src="https://github.com/JoanStinson/TapMatchMVC/blob/main/preview.gif">
+  <img src="https://github.com/JoanStinson/SpaceFighterMVC/blob/main/preview.gif">
 </p>
 
 ## 📜 Kata Rules
@@ -36,5 +36,5 @@ Simple Asteroids-inspired game implementation using model-view-controller struct
 
 ## 🔍 Unit Tests
 <p align="center">
-  <img src="https://github.com/JoanStinson/TapMatchMVC/blob/main/tests.PNG">
+  <img src="https://github.com/JoanStinson/SpaceFighterMVC/blob/main/tests.png">
 </p>
