@@ -1,4 +1,6 @@
-﻿namespace JGM.Game
+﻿using UnityEngine;
+
+namespace JGM.Game
 {
     public class GameController
     {
